@@ -1,0 +1,69 @@
+*, *::after,*::before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+}
+.title {
+
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    margin: 0;
+    flex-direction: column;
+}
+.subtitle {
+margin-top: 0.5;
+}
+
+.hide {
+display: none;
+}
+
+.birds {
+    --bird_top: 0;
+    --bird_size: 80px;
+    --bird-height: 60px;
+
+  
+    background-image: url('./assets/flappy.png');
+    position: absolute;
+    width: var(--bird_size);
+    height: var(--bird-height);
+    left:var(--bird_size);
+    /* border-radius: 50%; */
+    top: calc(var(--bird_top)*1px);
+
+
+
+}
+
+.pipe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(var(--pipe-width)*1px);
+    left: calc(var(--pipe-left)*1px);
+
+}
+
+.pipe > .segment {
+    position: absolute;
+    width: 100%;
+    background-color: hsl(100, 75%, 50%);
+
+}
+
+.pipe > .top {
+    top: 0;
+    bottom: calc(var(--hole-top)* 1px);
+}
+
+.pipe > .bottom {
+    bottom: 0;
+    top: calc(100vh - (var(--hole-top)* 1px) +  calc(var(--hole-height)* 1px));
+}
